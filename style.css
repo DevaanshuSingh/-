@@ -1,0 +1,433 @@
+.gold-text {
+    color: gold !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}
+
+* {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overscroll-behavior: none;
+}
+
+*::selection {
+    color: GOLD;
+}
+
+body {
+    scroll-behavior: smooth;
+    height: 100vh;
+    width: 100vw;
+    color: green !important;
+    font-family: "Tektur", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 2.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overscroll-behavior: none;
+    font-size: 1rem !important;
+}
+
+main {
+    height: auto;
+    width: auto;
+}
+
+.image {
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('img.jpg') no-repeat center;
+    /* background: url('img3.jpg') no-repeat center 20%; */
+    background-size: cover;
+    /* background-size: contain; */
+    backdrop-filter: blur(5px);
+    background-color: black;
+}
+
+.main-container {
+    background-color: rgba(0, 0, 0, 0.364);
+    overflow: scroll;
+    min-width: 100vw;
+    height: 100vh;
+}
+
+.section-1 {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-1>nav {
+    position: fixed;
+    width: 100vw;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.641);
+    z-index: 5;
+
+    transition: background-color 1s ease-in-out, height 1s ease-in-out !important;
+}
+
+.section-1>nav>.name {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid blue; */
+}
+
+.name>span>.open-navbar>i[class^="ri-"] {
+    visibility: hidden;
+    font-size: x-large;
+    transition: transform 0.3s ease-in-out;
+    /* animation: changeTextColor 5s infinite alternate; */
+    color: GOLD;
+}
+
+.open-navbar {
+    transform: rotate(180deg);
+}
+
+@keyframes changeTextColor {
+    0% {
+        color: GOLD;
+    }
+
+    25% {
+        color: green;
+    }
+
+    50% {
+        color: rgb(255, 255, 255);
+    }
+
+    75% {
+        color: Orange;
+    }
+
+    100% {
+        color: magenta;
+    }
+}
+
+.name>span>.open-navbar>i {
+    transform: rotate(180deg);
+}
+
+
+.section-1>nav>.name>.side-bar {
+    height: 100%;
+    width: 2%;
+    background-color: green;
+    color: green;
+    opacity: 0;
+    animation: blink 2s infinite alternate;
+    opacity: 0;
+}
+
+.section-1>nav>.name>.side-bar>span {
+    opacity: 0;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.section-1>nav>.list {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: color 0.3s ease-in-out, font-weight 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+}
+
+.list span {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.list span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: green;
+    transition: width 0.3s ease-in-out;
+}
+
+.list span:hover::after {
+    width: 100%;
+}
+
+.content-container {
+    height: 100%;
+    width: 100vw;
+    overflow: scroll;
+}
+
+.typing-container {
+    transition: all 5s ease;
+    filter: blur(5px);
+    width: max-content !important;
+    position: absolute;
+    left: -20%;
+    top: 10%;
+    height: 20% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem !important;
+    background-color: rgba(0, 128, 0, 0.452);
+    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 75% 100%, 0% 100%);
+    overflow: scroll;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing-container>span {
+    align-items: center;
+    width: 100% !important;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    height: 50%;
+    text-shadow: 5px 2px 20px green;
+}
+
+.typing-container>span::after {
+    content: '';
+    display: inline-block;
+    width: 10%;
+    height: 5vw !important;
+    background-color: rgb(0, 174, 255);
+    margin-left: 2px;
+    animation: blink 2s infinite;
+}
+
+.typing-container>.social-links {
+    align-items: center;
+    width: 100% !important;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5%;
+    height: 50%;
+}
+
+@media (max-width: 768px) {
+    .list {
+        flex-direction: column;
+    }
+
+    .inner-content {
+        text-align: center;
+    }
+}
+
+.typing-container>.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    margin: 0 4px;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.3s;
+    text-decoration: none;
+    color: green;
+}
+
+.typing-container>.social-links a:hover {
+    background: color-mix(in srgb, rgb(255, 255, 255), transparent 20%);
+    text-decoration: none;
+}
+
+.section-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+}
+
+/*FOOTER*/
+.footer {
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: 0 0 20% 0;
+    position: relative;
+    width: 100vw;
+    background-color: black;
+}
+
+.footer>.container {
+    /* border: 1px solid blue; */
+}
+
+.footer>.container>.container {
+    margin-bottom: 5%;
+    border-bottom: 1px solid orange;
+}
+
+.footer h3 {
+    font-weight: 700;
+    position: relative;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.footer p {
+    font-style: italic;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.footer .social-links {
+    margin: 0 0 30px 0;
+}
+
+.footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    line-height: 1;
+    margin: 0 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+    text-decoration: none;
+}
+
+.footer .copyright {
+    padding-top: 25px;
+}
+
+.footer .credits {
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.another-contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 5%;
+    overflow: scroll;
+    position: relative;
+    top: 30%;
+    min-height: 70%;
+    width: 100vw;
+    /* padding: 10% 0 0 0; */
+    /* border: 1px solid blue; */
+}
+
+
+.c5 {
+    padding: 1%;
+}
+
+.content {
+    /* text-shadow: 2px 2px 5px rgba(117, 221, 32, 0.363),
+                 2px 2px 5px rgba(117, 221, 32, 0.418);
+    color: green !important; */
+    text-shadow: 1px 1px 2px rgba(64, 241, 10, 0.856); /* सरल छाया प्रभाव */
+    color: white; /* पाठ का रंग सफेद करें */
+}
+
+.inner-content {
+    position: relative;
+    top: 0;
+    height: fit-content;
+    width: 100%;
+    position: absolute;
+    min-height: 70%;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list-group {
+    background-color: transparent !important;
+}
+
+
+/*Intrests*/
+.intrest-container {
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 700px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(54, 207, 62, 0.671);
+
+}
+
+p {
+    background-color: rgba(0, 0, 0, 0.185);
+    font-size: 1.2em;
+}
+
+.highlight {
+    color: #1dade6;
+    font-weight: bold;
+    text-shadow: 1px 0px 5px rgba(60, 255, 0, 0.671);
+}
