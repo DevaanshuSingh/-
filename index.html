@@ -46,7 +46,8 @@
                     <div class="social-links">
                         <a href="https://github.com/SwadeepSinghaRoy"><i class="ri-github-fill"></i></a>
                         <a href="https://github.com/SwadeepSinghaRoy"><i class="ri-twitter-x-line"></i></a>
-                        <a href="https://www.facebook.com/swadeep.singharoy.5"><i class="ri-facebook-circle-fill"></i></a>
+                        <a href="https://www.facebook.com/swadeep.singharoy.5"><i
+                                class="ri-facebook-circle-fill"></i></a>
                         <a href="https://github.com/SwadeepSinghaRoy"><i class="ri-instagram-line"></i></a>
                     </div>
                 </div>
@@ -128,6 +129,8 @@
         crossorigin="anonymous"></script>
 
     <script>
+
+
         window.onload = function () {
             let type = document.querySelector('.typing-container');
             type.style.height = "20%";
@@ -181,28 +184,28 @@
         $(document).ready(function () {
 
             if (window.innerWidth <= 768) {
-            $('.list').fadeOut(1000, function () {
-                $('.name').css("width", "100%");
-                $(this).css("display", "none");
-            });
-            $('nav').css({
-                "background-color": "rgba(0,255,0,0.1)",
-                "height": "7vmin"
-            });
-            $('.name').css("justify-content", "center");
-            $('.name > span > .open-navbar > i[class^="ri-"] ').css("visibility", "visible");
-        }
-        else {
-            $('.list').fadeIn(1000).css("display", "flex");
-            $('.name').css("width", "40%");
+                $('.list').fadeOut(1000, function () {
+                    $('.name').css("width", "100%");
+                    $(this).css("display", "none");
+                });
+                $('nav').css({
+                    "background-color": "rgba(0,255,0,0.1)",
+                    "height": "7vmin"
+                });
+                $('.name').css("justify-content", "center");
+                $('.name > span > .open-navbar > i[class^="ri-"] ').css("visibility", "visible");
+            }
+            else {
+                $('.list').fadeIn(1000).css("display", "flex");
+                $('.name').css("width", "40%");
 
-            $('nav').css({
-                "background-color": "",
-                "height": ""
-            });
-            $('.name').css("justify-content", "space-between");
-            $('.name > span > .open-navbar > i[class^="ri-"] ').css("visibility", "hidden");
-        }
+                $('nav').css({
+                    "background-color": "",
+                    "height": ""
+                });
+                $('.name').css("justify-content", "space-between");
+                $('.name > span > .open-navbar > i[class^="ri-"] ').css("visibility", "hidden");
+            }
 
 
 
@@ -226,7 +229,7 @@
             });
         });
 
-       
+
         let navIsOpen = false;
         $('.name > span > .open-navbar > i[class^="ri-"]').on("click", function () {
             if (!navIsOpen) {
@@ -256,6 +259,19 @@
             checkScreenSize();
             $(window).resize(checkScreenSize);
         });
+
+
+
+
+
+
+        let images = ['img.jpg', 'img3.jpg'];
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % images.length;
+            document.querySelector('.image').style.backgroundImage = `url('${images[index]}')`;
+        }, 5000);
 
     </script>
 </body>

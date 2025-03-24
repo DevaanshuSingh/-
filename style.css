@@ -52,12 +52,14 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-    background: url('img.jpg') no-repeat center;
-    /* background: url('img3.jpg') no-repeat center 20%; */
+    /* background: url('img.jpg') no-repeat center; */
+    background: url('img3.jpg') no-repeat center 20%;
     background-size: cover;
     /* background-size: contain; */
     backdrop-filter: blur(5px);
     background-color: black;
+    
+    transition: background-image 2s ease-in-out, opacity 1s ease-in-out;
 }
 
 .main-container {
